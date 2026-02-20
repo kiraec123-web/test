@@ -5,7 +5,7 @@ import {
   menuData,
   formatPrice,
   getItemDisplayTemp,
-  type MenuItem,
+  type MenuDisplayItem,
 } from "@/lib/menu";
 
 interface MenuDrawerProps {
@@ -35,7 +35,7 @@ export default function MenuDrawer({
   }, [isOpen, onClose]);
 
   const handleItemTap = useCallback(
-    (item: MenuItem) => {
+    (item: MenuDisplayItem) => {
       // Build the display name for the input
       let displayName = item.name;
       if (item.temps.length === 1 && item.temps[0] === "Iced") {
@@ -64,7 +64,7 @@ export default function MenuDrawer({
   );
 
   const hasSizes = (
-    prices: MenuItem["prices"]
+    prices: MenuDisplayItem["prices"]
   ): prices is { sm: number; lg: number } => {
     return "sm" in prices;
   };

@@ -208,7 +208,7 @@ export const syrups: AddOnItem[] = [
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-export interface MenuItem {
+export interface MenuDisplayItem {
   name: string;
   temps: string[];
   prices:
@@ -218,7 +218,7 @@ export interface MenuItem {
 
 export interface MenuSection {
   title: string;
-  items: MenuItem[];
+  items: MenuDisplayItem[];
 }
 
 export interface AddOn {
@@ -378,7 +378,7 @@ export function getItemDisplayTemp(temps: string[]): string {
   return temps.join(" / ");
 }
 
-export function getItemDisplayName(item: MenuItem, preferredTemp?: string): string {
+export function getItemDisplayName(item: MenuDisplayItem, preferredTemp?: string): string {
   if (item.temps.length === 0) return item.name;
   if (preferredTemp && item.temps.includes(preferredTemp)) {
     return `${preferredTemp} ${item.name}`;
