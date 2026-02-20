@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --brand-bg: #FAFAF8;
+  --brand-bg-card: #FFFFFF;
+  --brand-bg-dark: #1C1917;
+  --brand-text: #1C1917;
+  --brand-text-muted: #78716C;
+  --brand-primary: #B45309;
+  --brand-primary-hover: #92400E;
+  --brand-primary-light: #FEF3C7;
+  --brand-accent-green: #059669;
+  --brand-accent-blue: #2563EB;
+  --brand-danger: #DC2626;
+  --brand-border: #E7E5E4;
+}
+
+@theme inline {
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-bg-card: var(--brand-bg-card);
+  --color-brand-bg-dark: var(--brand-bg-dark);
+  --color-brand-text: var(--brand-text);
+  --color-brand-text-muted: var(--brand-text-muted);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-primary-light: var(--brand-primary-light);
+  --color-brand-accent-green: var(--brand-accent-green);
+  --color-brand-accent-blue: var(--brand-accent-blue);
+  --color-brand-danger: var(--brand-danger);
+  --color-brand-border: var(--brand-border);
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  background: var(--brand-bg);
+  color: var(--brand-text);
+}
