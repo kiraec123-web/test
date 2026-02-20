@@ -1,51 +1,27 @@
-# NYC Coffee
-
-## Project Overview
-
-NYC Coffee is an AI-powered coffee shop ordering assistant built as a Next.js web application. Customers interact through a chat interface to place orders.
-
-## Tech Stack
-
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **Icons**: lucide-react
-- **Fonts**: DM Sans (body), DM Serif Display (wordmark/headings)
-
-## Commands
-
-- `npm run dev` - Start development server
-- `npm run build` - Production build
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-## Project Structure
-
-```
-src/
-  app/
-    layout.tsx          - Root layout with fonts and global CSS
-    page.tsx            - Redirects to /customer
-    globals.css         - Tailwind imports, theme overrides, animations
-    customer/
-      page.tsx          - Customer chat page
-  components/
-    chat/
-      ChatInterface.tsx - Main chat shell (header, messages, input)
-      MessageBubble.tsx - Cashier/customer message bubbles + typing indicator
-      ChatInput.tsx     - Sticky input bar with voice, text, send buttons
-```
-
-## Design Tokens
-
-- **Primary accent**: amber-800 (#92400E)
-- **Backgrounds**: stone-50 (chat bg), stone-100 (button bg), white (bubbles/header)
-- **Borders**: stone-200, stone-300
-- **Body font**: DM Sans 14px
-- **Wordmark font**: DM Serif Display
+# Cafe Chat
 
 ## Build Status
+- E2-T2 Collapsible Menu Panel: COMPLETE
 
-| Epic | Ticket | Status |
-|------|--------|--------|
-| E2 - Customer Chat Interface | E2-T1 - Chat UI Shell | Complete |
+## Commands
+```bash
+npm run build    # Production build
+npm run dev      # Development server (port 3000)
+npm run lint     # Run ESLint
+```
+
+## Architecture
+- Next.js 16 App Router + TypeScript + Tailwind CSS 4
+- See docs/architecture.md for full details
+
+## Key Files
+- `src/lib/menu.ts` — Menu data (single source of truth)
+- `src/components/chat/MenuDrawer.tsx` — Collapsible menu drawer
+- `src/app/customer/page.tsx` — Customer chat view
+- `src/app/globals.css` — Design tokens (CSS custom properties)
+
+## Conventions
+- All menu data sourced from src/lib/menu.ts — no hardcoded strings in components
+- CSS custom properties for design tokens (--text, --border, --accent, etc.)
+- Fonts: DM Sans (body), DM Serif Display (headings), JetBrains Mono (prices)
+- No emojis in UI
